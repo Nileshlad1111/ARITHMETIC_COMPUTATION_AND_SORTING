@@ -9,7 +9,10 @@ read -p "Enter third input :" thirdInput
 result=$(($firstInput + $secondInput * $thirdInput))
 result1=$(($firstInput * $secondInput + $thirdInput))
 result2=$(($thirdInput + $firstInput/$secondInput))
+result3=$(($firstInput % $secondInput + $thirdInput))
+
 #TO PRINT
 echo "Result:" $result
 echo "Result1:" $result1
 echo "Result2:" $result2
+echo "Result3:" $result3
