@@ -1,2 +1,6 @@
 #!/bin/bash -x
-echo "---------------------------Welcome Arithmetic Computation And Sorting-------------------------------"
+
+#TO TAKING INPUT FROM USER
+read -p "Enter first input :" firstInput
+read -p "Enter second input:" secondInput
+read -p "Enter third input :" thirdInput
