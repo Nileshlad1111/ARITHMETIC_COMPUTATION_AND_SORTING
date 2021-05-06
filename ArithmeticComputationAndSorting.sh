@@ -28,3 +28,10 @@ arithmaticOperation[result3]=$result3
 
 #TO READ VALUE FROM THE DICTIONARY INTO THE ARRAY
 echo ${arithmaticOperation[@]}
+
+#TO USE SORT COMMAND
+decendingNumber=($(echo ${arithmaticOperation[*]} | tr " " "\n" | sort -nr))
+
+#TO PRINT THE DESENDING ORDER
+echo "Shorting in Descending Order"
+echo "Shorted Array is : ${decendingNumber[@]}"
