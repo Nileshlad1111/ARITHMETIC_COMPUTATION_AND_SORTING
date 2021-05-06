@@ -1,5 +1,8 @@
 #!/bin/bash -x
 
+#TO DECLEAR THE DICTIONARY
+declare -A arithmaticOperation
+
 #TO TAKING INPUT FROM USER
 read -p "Enter first input :" firstInput
 read -p "Enter second input:" secondInput
@@ -16,3 +19,11 @@ echo "Result:" $result
 echo "Result1:" $result1
 echo "Result2:" $result2
 echo "Result3:" $result3
+
+#TO STORE THE DICTIONARY
+arithmaticOperation[result]=$result
+arithmaticOperation[result1]=$result1
+arithmaticOperation[result2]=$result2
+arithmaticOperation[result3]=$result3
+
+
