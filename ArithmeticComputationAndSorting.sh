@@ -26,4 +26,5 @@ arithmaticOperation[result1]=$result1
 arithmaticOperation[result2]=$result2
 arithmaticOperation[result3]=$result3
 
-
+#TO READ VALUE FROM THE DICTIONARY INTO THE ARRAY
+echo ${arithmaticOperation[@]}
