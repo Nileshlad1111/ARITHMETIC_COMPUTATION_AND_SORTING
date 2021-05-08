@@ -34,14 +34,44 @@ done
 #TO PRINT
 echo "${array[@]}"
 
-#TO USE SORT COMMAND
-ascendingNumber=($(echo ${arithmaticOperation[*]} | tr " " "\n" | sort -n))
-decendingNumber=($(echo ${arithmaticOperation[*]} | tr " " "\n" | sort -nr))
+#TO FUNCTION SORTING RESULTS IN DECENDING ORDER
+function descendingOrderSort()
+{
+	for(( index=0; index<${#array[@]}; index ++ ))
+	do
+		for(( indexOne=0; indexOne<${#array[@]}-1; indexOne ++ ))
+		do
+			if (( $(echo "${array[indexOne+1]} > ${array[indexOne]}") ))
+			then
+				temp=${array[indexOne]}
+				array[indexOne]=${array[indexOne+1]}
+				array[indexOne+1]=$temp
+			fi
+		done
+	done
+	echo "To data descending order:"${array[@]}
+}
 
-#TO PRINT THE DESENDING ORDER
-echo "Shorting in Descending Order"
-echo "Shorted Array is : ${decendingNumber[@]}"
+#TO FUNCTION CALL FOR SORTING IN DECENDING ORDER
+descendingOrderSort ${array[@]}
 
-#TO PRINT THE ASENDING ORDER
-echo "Shorting in Ascending Order"
-echo "Shorted Array is : ${ascendingNumber[@]}"
+#TO FUNCTION SORTING RESULTS IN ASCENDING ORDER
+function ascendingOrderSort()
+{
+   for(( index=0; index<${#array[@]}; index ++ ))
+   do
+      for(( indexOne=0; indexOne<${#array[@]}-1; indexOne ++ ))
+      do
+         if (( $(echo "${array[indexOne+1]} < ${array[indexOne]}") ))
+         then
+            temp=${array[indexOne]}
+            array[indexOne]=${array[indexOne+1]}
+            array[indexOne+1]=$temp
+         fi
+      done
+   done
+   echo "To data ascending order:"${array[@]}
+}
+
+#TO FUNCTION CALL FOR SORTING IN ASCENDING ORDER
+ascendingOrderSort ${array[@]}
